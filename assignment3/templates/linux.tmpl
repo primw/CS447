@@ -1,0 +1,6 @@
+menuentry "{{title}}" {
+  set root=(hd0,1)
+  linux {{kernel_path}} root=/dev/vda1 net.ifnames=0 biosdevname=0
+  initrd {{initrd_path}}
+
+}

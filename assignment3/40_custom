@@ -1,0 +1,21 @@
+menuentry "Netboot XYZ" {
+  set root=(hd0,1)
+  linux /boot/kernel.1 root=/dev/vda1 net.ifnames=0 biosdevname=0
+  initrd /boot/initrd.1.gz
+
+}
+
+menuentry "Custom initrd" {
+  set root=(hd0,1)
+  linux /boot/kernel.1 root=/dev/vda1 net.ifnames=0 biosdevname=0
+  initrd /boot/initrd.1.gz
+
+}
+
+menuentry "Xubuntu ISO" {
+  set root=(hd0,1)
+  linux /boot/kernel.1 root=/dev/vda1 net.ifnames=0 biosdevname=0
+  initrd /boot/initrd.1.gz
+
+}
+

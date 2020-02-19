@@ -1,0 +1,27 @@
+[{
+		"title": "Netboot XYZ",
+		"kernel_path": "/boot/netboot.xyz.lkrn",
+		"template": "netboot",
+		"source": "http://cs447.cse.unr.edu/dgrub/"
+	},
+	{
+		"title": "Custom initrd",
+		"kernel_path": "/boot/kernel.1",
+		"initrd_path": "/booot/initrd.1.gz",
+		"template": "linux",
+		"top": ["set root=(hd0,1)"],
+		"source": "http://cs447.cse.unr.edu/dgrub/",
+		"kernel_args": ["root=/dev/vda1", "net.ifnames=0", "biosdevname=0"]
+	},
+	{
+		"title": "Xubuntu ISO",
+		"kernel_path": "(loop)/casper/vmlinuz",
+		"initrd_path": "(loop)/casper/initrd.lz",
+		"top": ["set isofile='/boot/iso/xubuntu-18.04-desktop-amd64.iso'",
+			"loopback loop (hd0,1)$isofile"
+		],
+		"template": "linux",
+		"source": "http://cs447.cse.unr.edu/dgrub/",
+		"kernel_args": ["boot=casper","iso-scan/filename=$isofile","noprompt", "noeject"]
+	}
+]
